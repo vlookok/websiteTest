@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi Time</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        #datetime { font-size: 1.2em; color: #333; }
+    </style>
+</head>
+<body>
+
+    <h1>Hi!</h1>
+    <div id="datetime"></div>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const dateString = now.toLocaleDateString();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById("datetime").innerHTML = dateString + " - " + timeString;
+        }
+        
+        // Update time immediately, then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
